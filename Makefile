@@ -28,12 +28,12 @@ OBJ = $(SRC:.c=.o)
 
 CC = gcc -Wall -Werror -Wextra
 
-%.o: %.c ft_printf.h libft/libft.h
+%.o: %.c ft_printf.h Makefile
 	$(CC) -I. -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) ft_printf.h Makefile
+$(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 clean:
